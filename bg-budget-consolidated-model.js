@@ -40,8 +40,7 @@
     },
     "section": {
       "fields": [
-        {"column": "section", "datatype": "string", "name": "label"},
-        {"column": "plusminus", "datatype": "string", "name": "income_or_expenditure"}
+        {"column": "section", "datatype": "string", "name": "label"}
       ],
       "label": "Раздел",
       "type": "classifier",
@@ -50,8 +49,7 @@
     },
     "direction": {
       "fields": [
-        {"column": "section", "datatype": "string", "name": "label"},
-        {"column": "plusminus", "datatype": "string", "name": "income_or_expenditure"}
+        {"column": "direction", "datatype": "string", "name": "label"}
       ],
       "label": "Раздел",
       "type": "classifier",
@@ -60,8 +58,7 @@
     },
     "program": {
       "fields": [
-        {"column": "program", "datatype": "string", "name": "label"},
-        {"column": "plusminus", "datatype": "string", "name": "income_or_expenditure"}
+        {"column": "program", "datatype": "string", "name": "label"}
       ],
       "label": "Програма",
       "type": "classifier",
@@ -70,14 +67,19 @@
     },
     "type": {
       "fields": [
-        {"column": "type", "datatype": "string", "name": "label" },
-        {"column": "plusminus", "datatype": "string", "name": "income_or_expenditure" }
+        {"column": "type", "datatype": "string", "name": "label" }
       ],
       "label": "Тип разход",
       "type": "classifier",
       "description": "",
       "taxonomy": "bg-budget:level:4"
     },
+    "flow": {
+      "column": "plusminus",
+      "label": "Cash flow: income or expenditure",
+      "type": "value",
+      "description": ""
+    }
   },
   "views": [
     {
@@ -87,7 +89,7 @@
       "dimension": "dataset",
       "breakdown": "section",
       "filters": {"name": "bg-budget"},
-      "view_filters": {"income_or_expenditure": "Приходи"}
+      "view_filters": {"flow": "Приходи"}
     },
     {
       "entity": "classifier",
@@ -96,7 +98,7 @@
       "dimension": "section",
       "breakdown": "direction",
       "filters": {"taxonomy": "bg-budget:level:1" },
-      "view_filters": {"income_or_expenditure": "Приходи"}
+      "view_filters": {"flow": "Приходи"}
     },
     {
       "entity": "classifier",
@@ -105,7 +107,7 @@
       "dimension": "direction",
       "breakdown": "program",
       "filters": {"taxonomy": "bg-budget:level:2" },
-      "view_filters": {"income_or_expenditure": "Приходи"}
+      "view_filters": {"flow": "Приходи"}
     },
     {
       "entity": "classifier",
@@ -114,9 +116,9 @@
       "dimension": "program",
       "breakdown": "type",
       "filters": {"taxonomy": "bg-budget:level:3" },
-      "view_filters": {"income_or_expenditure": "Приходи"}
+      "view_filters": {"flow": "Приходи"}
     },
-    
+   
     
     {
       "entity": "dataset",
@@ -125,7 +127,7 @@
       "dimension": "dataset",
       "breakdown": "direction",
       "filters": {"name": "bg-budget"},
-      "view_filters": {"income_or_expenditure": "Разходи"}
+      "view_filters": {"flow": "Разходи"}
     },
     {
       "entity": "classifier",
@@ -134,7 +136,7 @@
       "dimension": "direction",
       "breakdown": "program",
       "filters": {"taxonomy": "bg-budget:level:2" },
-      "view_filters": {"income_or_expenditure": "Разходи"}
+      "view_filters": {"flow": "Разходи"}
     },
     {
       "entity": "classifier",
@@ -143,8 +145,9 @@
       "dimension": "program",
       "breakdown": "type",
       "filters": {"taxonomy": "bg-budget:level:3" },
-      "view_filters": {"income_or_expenditure": "Разходи"}
+      "view_filters": {"flow": "Разходи"}
     }
 
   ]
 }
+
