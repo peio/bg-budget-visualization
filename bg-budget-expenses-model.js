@@ -2,14 +2,14 @@
   "dataset": {
     "model_rev": 1,
     "name": "bg-budget",
-    "label": "Приходна част на бюджета за 2011 година",
-    "description": "Визуализация на приходната част на Бюджета на Република България за 2011 година",
+    "label": "Разходна част на бюджета за 2011 година",
+    "description": "Визуализация на разходната част на Бюджета на Република България за 2011 година",
     "currency": "BGN"
   },
   "mapping": {
     "from": {
       "fields": [
-        {"constant": "Българското общество", "name": "label", "datatype": "constant"}
+        {"constant": "Държавата", "name": "label", "datatype": "constant"}
       ],
       "type": "entity",
       "description": "The entity that the money was paid from",
@@ -17,7 +17,7 @@
     },
     "to": {
       "fields": [
-        {"constant": "Правителството на РБългария", "name": "label", "datatype": "constant"}
+        {"constant": "Гражданите", "name": "label", "datatype": "constant"}
       ],
       "type": "entity",
       "description": "The entity that the money was paid to",
@@ -38,7 +38,7 @@
       "datatype": "float",
       "type": "value"
     },
-    "section": {
+    "direction": {
       "fields": [
         {
           "column": "section",
@@ -50,7 +50,7 @@
       ],
       "label": "Раздел",
       "type": "classifier",
-      "description": "Основни направления",
+      "description": "Направление",
       "taxonomy": "bg-budget:level:0"
     },
     "program": {
@@ -65,7 +65,7 @@
       ],
       "label": "type2",
       "type": "classifier",
-      "description": "Програма",
+      "description": "Вид",
       "taxonomy": "bg-budget:level:1"
     },
     "type": {
@@ -80,7 +80,7 @@
       ],
       "label": "type3",
       "type": "classifier",
-      "description": "Тип разход",
+      "description": "Текущ или капиталов",
       "taxonomy": "bg-budget:level:2"
     },
   }
@@ -88,26 +88,26 @@
     {
       "entity": "dataset",
       "label": "Разходи",
-      "name": "default",
+      "name": "expenditure",
       "dimension": "dataset",
-      "breakdown": "section",
-      "filters": {"name": "bg-budget"}
+      "breakdown": "direction",
+      "filters": {"name": "bg-budget"},
     },
     {
       "entity": "classifier",
       "label": "Основни направления",
-      "name": "default",
-      "dimension": "section",
+      "name": "expenditure",
+      "dimension": "direction",
       "breakdown": "program",
-      "filters": {"taxonomy": "bg-budget:level:0" }
+      "filters": {"taxonomy": "bg-budget:level:2" },
     },
     {
       "entity": "classifier",
       "label": "Видове в направление",
-      "name": "default",
+      "name": "expenditure",
       "dimension": "program",
       "breakdown": "type",
-      "filters": {"taxonomy": "bg-budget:level:1" }
-    },
+      "filters": {"taxonomy": "bg-budget:level:3" },
+    }
   ]
 }
