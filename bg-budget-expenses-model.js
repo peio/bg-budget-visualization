@@ -83,7 +83,7 @@
       "description": "Тип разход",
       "taxonomy": "bg-budget:level:2"
     },
-  },
+  }
   "views": [
     {
       "entity": "dataset",
