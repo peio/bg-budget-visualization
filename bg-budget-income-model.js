@@ -108,14 +108,7 @@
       "breakdown": "type1",
       "filters": {"name": "bg-budget"}
     },
-    {
-      "entity": "dataset",
-      "label": "Вид приход 2",
-      "name": "section",
-      "dimension": "dataset",
-      "breakdown": "type1",
-      "filters": {"name": "bg-budget"}
-    },
+
     {
       "entity": "classifier",
       "label": "Ниво 1",
