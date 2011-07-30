@@ -117,9 +117,7 @@
       "breakdown": "type",
       "filters": {"taxonomy": "bg-budget:level:3" },
       "view_filters": {"flow": "Приходи"}
-    },
-   
-    
+    },    
     {
       "entity": "dataset",
       "label": "Разходи",

@@ -2,6 +2,7 @@
   "dataset": {
     "model_rev": 1,
     "name": "bg-budget",
+    "unique_keys": ["id"], 	
     "label": "Приходна част на бюджета за 2011 година",
     "description": "Визуализация на приходната част на Бюджета на Република България за 2011 година",
     "currency": "BGN"
@@ -37,6 +38,11 @@
       "label": "",
       "datatype": "float",
       "type": "value"
+    },
+    "id":{
+	"type": "value",
+	"column": "id",
+	"datatype": "string"
     },
     "type1": {
       "fields": [
