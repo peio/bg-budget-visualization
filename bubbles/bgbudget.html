@@ -68,22 +68,18 @@
 				rootNodeLabel: 'Bulgaria Budget',
 				//breakdown: 'dataset',
 				callback: function(data) {
-					
-					new OpenSpending.BubbleTree.Loader({
+
+                   new OpenSpending.BubbleTree.Loader({
 						data: data,
 						container: '.bubbletree',
-						//tooltipCallback: tooltip,
 						bubbleType: 'donut',
 						initTooltip: initTooltip,
 						maxNodesPerLevel: 12,
 						bubbleStyles: {
-							'id': {
-								'root': { color: '#000000' }
-							}
-
-
+							"bg-budget:level:0":  OpenSpending.BubbleTree.Styles.Cofog,
+							"bg-budget:level:1":  OpenSpending.BubbleTree.Styles.Cofog
 						}
-					});
+					})
 				}
 			});
 			

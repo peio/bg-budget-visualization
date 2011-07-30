@@ -270,6 +270,7 @@ var OpenSpending = OpenSpending || {};
             } else {
                 throw 'unsupported type: ' + type;
             }
+//             document.write("<p>" + name + " " + taxonomy + "</p>");
             return {id: prefix + id,
                     label: label,
                     name: name,
