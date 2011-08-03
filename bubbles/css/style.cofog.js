@@ -74,8 +74,7 @@ OpenSpending.BubbleTree.Styles.Cofog = {
 	'06.3': { icon: 'styles/icons/water.svg' },
 	'06.4': { icon: 'styles/icons/street-lights.svg' },
 	
-	'07': { icon: 'styles/icons/health.svg', color: '#4E6D00' },	
-	'07.1': { icon: 'styles/icons/medical-supplies.svg' },				
+	'07': { icon: 'styles/icons/health.svg', color: '#4E6D00' },											'07.1': { icon: 'styles/icons/medical-supplies.svg' },				
 	'07.1.1': { icon: 'styles/icons/medical-supplies.svg' },				
 	'07.1.2': { icon: 'styles/icons/other-medical-products.svg' },				
 	'07.1.3': { icon: 'styles/icons/wheelchair.svg' },		
@@ -101,4 +100,60 @@ OpenSpending.BubbleTree.Styles.Cofog = {
 	'10.4': { icon: 'styles/icons/family.svg' },
 	'10.7': { icon: 'styles/icons/family2.svg' }
 
+
+
 };
+
+OpenSpending.BubbleTree.Styles.BGfog = {
+
+	'01': { icon: 'styles/icons/admin.svg', color: '#C75746' },
+		'01-1': { icon: 'styles/icons/courts.svg' },
+		'01-3-2': { icon: 'styles/icons/planning.svg' },
+		'01-3-3': { icon: 'styles/icons/research.svg' },
+
+	'02': { icon: 'styles/icons/defence.svg', color: '#000000' },
+		'02-1': { icon: 'styles/icons/military.svg' },
+		'03-1': { icon: 'styles/icons/police.svg' },
+		'03-3': { icon: 'styles/icons/courts.svg' },
+		'03-4': { icon: 'styles/icons/prisons.svg' },
+		'02-2': { icon: 'styles/icons/civil-defence.svg' },
+
+ '04': { icon: 'styles/icons/family.svg', color: '#790586' }, 
+	'08-2': { icon: 'styles/icons/culture.svg' },					
+	'08-1': { icon: 'styles/icons/sports.svg' },	
+	'04-2-2': { icon: 'styles/icons/forest.svg' },
+	'01-3-9': { icon: 'styles/icons/secondary-lower.svg' },
+ 
+'03': { icon: 'styles/icons/euro.svg', color: '#778fa7' },
+	'04-3': { icon: 'styles/icons/energy.svg' },
+	'04-2-1': { icon: 'styles/icons/farms.svg' },
+	'04-5': { icon: 'styles/icons/transport.svg' },
+	'04-3-3': { icon: 'styles/icons/nuclear.svg' },
+	'01-1-3': { icon: 'styles/icons/worldmap.svg' },
+  '01-2-9': { icon: 'styles/icons/waste.svg' },
+
+ '06': { icon: 'styles/icons/manufactoring-construction.svg', color: '#4C7D7E'  },
+		'04-1': { icon: 'styles/icons/enviroment.svg' },
+		'04-9': { icon: 'styles/icons/housing.svg' },	
+
+	'07': { icon: 'styles/icons/medical-supplies.svg', color: '#0AB971' },
+		'07-1-1': { icon: 'styles/icons/nosuch.svg'},	
+		'07-1-2': { icon: 'styles/icons/nosuch.svg'},	
+
+ '08': { icon: 'styles/icons/misc-services.svg', color: '#938626' },
+	'06-2-1': { icon: 'styles/icons/nosuch.svg' },
+	'06-2-2': { icon: 'styles/icons/nosuch.svg' },
+
+ '09': { icon: 'styles/icons/books.svg', color: '#0AB971' },
+		'09-1-1': { icon: 'styles/icons/nosuch.svg' },				
+		'09-1-2': { icon: 'styles/icons/nosuch.svg' },				
+
+	'10': { icon: 'styles/icons/helping-others.svg', color: '#935B3B' },
+		'10-1': { icon: 'styles/icons/helping-others.svg' },
+		'10-2': { icon: 'styles/icons/old-age.svg' },
+		'10-4': { icon: 'styles/icons/family.svg' }
+
+
+
+};
+
