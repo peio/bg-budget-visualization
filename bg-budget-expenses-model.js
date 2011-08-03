@@ -50,7 +50,9 @@
     },
 
     "direction": {
-      "fields": [ { "column": "direction", "datatype": "string",  "default_value": "", "constant": "",  "name": "label" }   ],
+      "fields": [ { "column": "direction", "datatype": "string",  "default_value": "", "constant": "",  "name": "label" },   
+						      { "column": "cofog_direction_color", "datatype": "string", "name": "color", "default_value": "#555555"},
+					        { "column": "cofog_direction_id", "datatype": "string", "name": "name", "default_value": "0"} ],
       "label": "Раздел",
       "type": "classifier",
       "description": "Направление",
@@ -58,7 +60,8 @@
     }, 
 
     "program": {
-      "fields": [ { "column": "program", "datatype": "string", "default_value": "",  "constant": "", "name": "label" } ],
+      "fields": [ { "column": "program", "datatype": "string", "default_value": "",  "constant": "", "name": "label" },
+					        { "column": "cofog_program_id", "datatype": "string", "name": "name", "default_value": "0"} ],
       "label": "Програма",
       "type": "classifier",
       "description": "Вид",
@@ -71,19 +74,8 @@
       "type": "classifier",
       "description": "Текущ или капиталов",
       "taxonomy": "bg-budget-expenses:level-2"
-    },
-
-
-    "cofog1": {
-      "type": "classifier",
-      "fields": [
-        {"column": "cofog_direction_color", "datatype": "string", "name": "label", "default_value": "#555555"},
-        {"column": "cofog_direction_id", "datatype": "string", "name": "label", "default_value": "unknown"}
-      ],
-      "label": "COFOG level 1",
-      "description": "Classification Of Function Of Government, level 1",
-      "taxonomy": "cofog1"
     }
+
 
   }, 
 
