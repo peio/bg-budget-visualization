@@ -1,40 +1,43 @@
 {
-  "dataset": {
+"dataset": {
     "model_rev": 1,
-    "name": "bg-budget",
+    "name": "bg-budget-expenses",
     "unique_keys": ["id"], 	
-    "label": "Разходна част на бюджета за 2011 година",
-    "description": "Визуализация на разходната част на Бюджета на Република България за 2011 година",
+    "label": "Разходна част на Бюджета за 2011",
+    "description": "Разходна част на Бюджета за 2011",
     "currency": "BGN"
   },
 
-  "mapping": {
+"mapping": {
     "from": {
-      "fields": [
-        {"constant": "Държавата", "name": "label", "datatype": "constant"}
-      ],
+      "fields": [  {"constant": "Държавата", "name": "label", "datatype": "constant"}  ],
       "type": "entity",
-      "description": "Платец",
-      "label": "Платено от"
+      "description": "Платено от",
+      "label": "Платец"
     },
+
     "to": {
       "fields": [
-        {"constant": "Гражданите", "name": "label", "datatype": "constant"}
+        {"constant": "Обществото", "name": "label", "datatype": "constant"}
       ],
       "type": "entity",
-      "description": "Получател",
-      "label": "Платено на"
+      "description": "Платено на",
+      "label": "Получател"
     },
-    "id":{
-	"type": "value",
-	"column": "id",
-	"datatype": "string"
-    },	
-    "time": {
-      "type": "value",
-      "label": "Budget year",
+
+    "id": {
+      "default_value": "",
       "description": "",
+      "column": "id",
+      "label": "Record Identifier",
+      "datatype": "string",
+      "type": "value"
+    },
+    "time": {
       "column": "year",
+      "type": "value",
+      "label": "Бюджетна година",
+      "description": "",
       "datatype": "date"
     },
     "amount": {
@@ -51,60 +54,67 @@
       "label": "Раздел",
       "type": "classifier",
       "description": "Направление",
-      "taxonomy": "bg-budget:level:0"
-    },    
+      "taxonomy": "bg-budget-expenses:level-0"
+    }, 
+
     "program": {
       "fields": [ { "column": "program", "datatype": "string", "default_value": "",  "constant": "", "name": "label" } ],
       "label": "Програма",
       "type": "classifier",
       "description": "Вид",
-      "taxonomy": "bg-budget:level:1"
+      "taxonomy": "bg-budget-expenses:level-1"
     },
-    "type": {
+ 
+   "type": {
       "fields": [ {  "column": "type",  "datatype": "string", "default_value": "",  "constant": "",  "name": "label"   }  ],
       "label": "Тип",
       "type": "classifier",
       "description": "Текущ или капиталов",
-      "taxonomy": "bg-budget:level:2"
+      "taxonomy": "bg-budget-expenses:level-2"
     },
-   "cofog": {
-      "fields": [
-        {"column": "cofog_direction_color", "datatype": "string", "name": "color", "default_value": "#555555"},
-        {"column": "cofog_direction_id", "datatype": "string", "name": "name", "default_value": "unknown"}
-      ],
-      "label": "COFOG",
-      "description": "Класификация на разходите",
+
+
+    "cofog1": {
       "type": "classifier",
-      "taxonomy": "cofog-1"
+      "fields": [
+        {"column": "cofog_direction_color", "datatype": "string", "name": "label", "default_value": "#555555"},
+        {"column": "cofog_direction_id", "datatype": "string", "name": "label", "default_value": "unknown"}
+      ],
+      "label": "COFOG level 1",
+      "description": "Classification Of Function Of Government, level 1",
+      "taxonomy": "cofog1"
     }
-  },
-  "views": [
+
+  }, 
+
+"views": [
     {
       "entity": "dataset",
-      "label": "Разходи",
+      "label": "Вид приход",
       "name": "default",
       "dimension": "dataset",
       "breakdown": "direction",
-      "filters": {"name": "bg-budget"}
+      "filters": {"name": "bg-budget-expenses"}
     },
+
     {
       "entity": "classifier",
-      "label": "Основни направления",
+      "label": "Направления",
       "name": "default",
       "dimension": "direction",
       "breakdown": "program",
-      "filters": {"taxonomy": "bg-budget:level:1" }
-    },
+      "filters": {"taxonomy": "bg-budget-expenses:level-0"}           
+    }, 
     {
       "entity": "classifier",
-      "label": "Видове в направление",
+      "label": "Направления",
       "name": "default",
       "dimension": "program",
       "breakdown": "type",
-      "filters": {"taxonomy": "bg-budget:level:2" }
+      "filters": {"taxonomy": "bg-budget-expenses:level-1"}           
     }
-  ]
-}
 
 
+] 
 
+} 

@@ -1,8 +1,8 @@
 {
   "dataset": {
-    "model_rev": 1,
+    "model_rev": 2,
     "name": "bg-budget",
-    "unique_keys": ["id"], 	
+    "unique_keys": ["pk"], 	
     "label": "Приходна част на бюджета за 2011 година",
     "description": "Визуализация на приходната част на Бюджета на Република България за 2011 година",
     "currency": "BGN"
@@ -24,6 +24,7 @@
       "description": "The entity that the money was paid to",
       "label": "Paid to"
     },
+
     "time": {
       "type": "value",
       "label": "Budget year",
@@ -35,74 +36,45 @@
       "default_value": "",
       "description": "",
       "column": "amount",
-      "label": "",
+      "label": "Amount",
       "datatype": "float",
       "type": "value"
     },
-    "id":{
-	"type": "value",
-	"column": "id",
-	"datatype": "string"
+    "pk": {
+      "default_value": "",
+      "description": "Primary key",
+      "column": "pk",
+      "label": "Record Identifier",
+      "datatype": "string",
+      "type": "value"
     },
     "type1": {
-      "fields": [
-        {
-          "column": "type1",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
-      ],
-      "label": "type1 classification",
+			"fields": [  {"column": "type1", "datatype": "string", "default_value": "", "constant": "", "name": "label"  }  ],      
+			"label": "type1 classification",
       "type": "classifier",
       "description": "type1 grouping to allow for an easier overview of spending.",
-      "taxonomy": "bg-budget:level:0"
+      "taxonomy": "bg-budget:level:1"
     },
     "type2": {
-      "fields": [
-        {
-          "column": "type2",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
-      ],
+			"fields": [  {"column": "type2", "datatype": "string", "default_value": "", "constant": "", "name": "label"  }  ],
       "label": "type2",
       "type": "classifier",
       "description": "type2",
-      "taxonomy": "bg-budget:level:1"
+      "taxonomy": "bg-budget:level:2"
     },
     "type3": {
-      "fields": [
-        {
-          "column": "type3",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
-      ],
+			"fields": [  {"column": "type3", "datatype": "string", "default_value": "", "constant": "", "name": "label"  }  ],
       "label": "type3",
       "type": "classifier",
       "description": "type3 desc",
-      "taxonomy": "bg-budget:level:2"
+      "taxonomy": "bg-budget:level:3"
     },
-    "type4": {
-      "fields": [
-        {
-          "column": "type4",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
-      ],
+    "type4": { 
+			"fields": [  {"column": "type4", "datatype": "string", "default_value": "", "constant": "", "name": "label"  }  ],
       "label": "type4",
       "type": "classifier",
       "description": "type4 desc",
-      "taxonomy": "bg-budget:level:3"
+      "taxonomy": "bg-budget:level:4"
     }
   },
   "views": [
@@ -121,7 +93,7 @@
       "name": "default",
       "dimension": "type1",
       "breakdown": "type2",
-      "filters": {"taxonomy": "bg-budget:level:0" }
+      "filters": {"taxonomy": "bg-budget:level:1" }
     },
     {
       "entity": "classifier",
@@ -129,7 +101,7 @@
       "name": "default",
       "dimension": "type2",
       "breakdown": "type3",
-      "filters": {"taxonomy": "bg-budget:level:1" }
+      "filters": {"taxonomy": "bg-budget:level:2" }
     },
     {
       "entity": "classifier",
@@ -137,7 +109,7 @@
       "name": "default",
       "dimension": "type3",
       "breakdown": "type4",
-      "filters": {"taxonomy": "bg-budget:level:2" }
+      "filters": {"taxonomy": "bg-budget:level:3" }
     }
   ]
 }
