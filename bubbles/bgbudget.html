@@ -12,12 +12,12 @@
 	<script type="text/javascript" src="lib/vendor/Tween.js"></script>
 	<script type="text/javascript" src="bubbletree.min.js"></script>
 	<script type="text/javascript" src="lib/aggregator.js"></script>
-	<script type="text/javascript" src="css/style.cofog.js"></script>	
 	
 	<link rel="stylesheet" type="text/css" href="css/style.page.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.bubbletree.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.tooltips.css" />
 
+	<script type="text/javascript" src="css/style.cofog.js"></script>	
 
 	
 	<script type="text/javascript">
@@ -61,25 +61,32 @@
 			
 			new OpenSpending.Aggregator({
 				apiUrl: 'http://sandbox.openspending.org/api',
-				dataset: 'bg-budget',
-				drilldowns: ['type1', 'type2', 'type3', 'type4'],
+				dataset: 'bg-budget-expenses',
+				drilldowns: ['direction', 'program', 'type'],
 				//cuts: ['year:2011'],
 				//localApiCache: 'aggregate.json',
-				rootNodeLabel: 'Bulgaria Budget',
+				rootNodeLabel: 'Бюджет на Република България',
 				//breakdown: 'dataset',
 				callback: function(data) {
 
                    new OpenSpending.BubbleTree.Loader({
 						data: data,
 						container: '.bubbletree',
-						bubbleType: 'donut',
+						//tooltipCallback: tooltip,
+						bubbleType: 'icon',
 						initTooltip: initTooltip,
 						maxNodesPerLevel: 12,
-						bubbleStyles: {
-							"bg-budget:level:0":  OpenSpending.BubbleTree.Styles.Cofog,
-							"bg-budget:level:1":  OpenSpending.BubbleTree.Styles.Cofog
-						}
-					})
+							bubbleStyles: {
+							    'id': {
+						        'root': {  icon: 'styles/icons/money.svg', color: '#EAC117'}
+							    },
+
+							"bg-budget-expenses:level-0": OpenSpending.BubbleTree.Styles.BGfog,
+							"bg-budget-expenses:level-1": OpenSpending.BubbleTree.Styles.BGfog							
+							
+							}
+					});
+
 				}
 			});
 			
