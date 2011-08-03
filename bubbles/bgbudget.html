@@ -68,10 +68,11 @@
 				rootNodeLabel: 'Бюджет на Република България',
 				//breakdown: 'dataset',
 				callback: function(data) {
-					
-					new OpenSpending.BubbleTree.Loader({
+
+                   new OpenSpending.BubbleTree.Loader({
 						data: data,
 						container: '.bubbletree',
+<<<<<<< HEAD
 						//tooltipCallback: tooltip,
 						bubbleType: 'icon',
 						initTooltip: initTooltip,
@@ -86,6 +87,16 @@
 							
 							}
 					});
+=======
+						bubbleType: 'donut',
+						initTooltip: initTooltip,
+						maxNodesPerLevel: 12,
+						bubbleStyles: {
+							"bg-budget:level:0":  OpenSpending.BubbleTree.Styles.Cofog,
+							"bg-budget:level:1":  OpenSpending.BubbleTree.Styles.Cofog
+						}
+					})
+>>>>>>> c51c122e55a039bdf8c0c85da2e6dadb3c50e84b
 				}
 			});
 			
