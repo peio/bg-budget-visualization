@@ -6,7 +6,6 @@
 if (!OpenSpending || !OpenSpending.BubbleTree) window.alert('You must include the BubbleTree before including the styles');
 
 OpenSpending.BubbleTree.Styles.Cofog = {
-    "nedan'chni-prikhodi": { icon: 'icons/government-uk.svg', color: '#EC2406' },
 	'01.1': { icon: 'styles/icons/legislative.svg' },
 	'01.1.1': { icon: 'styles/icons/legislative.svg' },
 	'01.1.2': { icon: 'styles/icons/pig.svg' },
@@ -74,7 +73,8 @@ OpenSpending.BubbleTree.Styles.Cofog = {
 	'06.3': { icon: 'styles/icons/water.svg' },
 	'06.4': { icon: 'styles/icons/street-lights.svg' },
 	
-	'07': { icon: 'styles/icons/health.svg', color: '#4E6D00' },											'07.1': { icon: 'styles/icons/medical-supplies.svg' },				
+	'07': { icon: 'styles/icons/health.svg', color: '#4E6D00' },											
+  '07.1': { icon: 'styles/icons/medical-supplies.svg' },				
 	'07.1.1': { icon: 'styles/icons/medical-supplies.svg' },				
 	'07.1.2': { icon: 'styles/icons/other-medical-products.svg' },				
 	'07.1.3': { icon: 'styles/icons/wheelchair.svg' },		
@@ -99,8 +99,6 @@ OpenSpending.BubbleTree.Styles.Cofog = {
 	'10.2': { icon: 'styles/icons/old-age.svg' },
 	'10.4': { icon: 'styles/icons/family.svg' },
 	'10.7': { icon: 'styles/icons/family2.svg' }
-
-
 
 };
 
@@ -152,11 +150,6 @@ OpenSpending.BubbleTree.Styles.BGfog = {
  'mics': { icon: 'styles/icons/misc-services.svg', color: '#938626' },
 	'mics1': { icon: 'styles/icons/nosuch.svg' },
 	'mics2': { icon: 'styles/icons/nosuch.svg' }
-
-
-
-
-
 
 };
 
